@@ -7,3 +7,4 @@ C:\Users\User\source\repos\LAB3.2\LAB3.2\obj\Debug\LAB3._2.Properties.Resources.
 C:\Users\User\source\repos\LAB3.2\LAB3.2\obj\Debug\LAB3.2.csproj.GenerateResource.cache
 C:\Users\User\source\repos\LAB3.2\LAB3.2\obj\Debug\LAB3.2.exe
 C:\Users\User\source\repos\LAB3.2\LAB3.2\obj\Debug\LAB3.2.pdb
+C:\Users\User\source\repos\LAB3.2\LAB3.2\obj\Debug\LAB3._2.Form2.resources

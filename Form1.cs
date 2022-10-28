@@ -17,7 +17,7 @@ namespace LAB3._2
         bool _mouseClicked = false;
         Color SelectedColor
         {
-            get { return Color.Red; }
+            get { return colorDialog1.Color; }
         }
         int SelectedSize
         {
@@ -94,15 +94,33 @@ namespace LAB3._2
         {
             _selecredBrush = new Circle(SelectedColor, SelectedSize);
         }
+        class ImageSizeForm
+        {
 
+        }
+        
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateBlank(pictureBox1.Width, pictureBox1.Height);
+            Form2 form = new Form2();
+            form.ShowDialog();
+            if (form.Canceled==false)
+            {
+                CreateBlank(form.W, form.H);
+            }
+            
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pictureBox1.Image=null;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog()==DialogResult.OK)
+            {
+                button5.BackColor = colorDialog1.Color;
+            }
         }
     }
 }
