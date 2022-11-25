@@ -43,7 +43,12 @@ namespace LAB3._2
 
         public override void Draw(Bitmap image, int x, int y)
         {
-           
+           for (int y0 = - Size; y0 <= Size; y0++)
+            {
+                int x0 = Convert.ToInt32(Math.Sqrt(Math.Pow(Size, 2) - Math.Pow(y0, 2)));
+                image.SetPixel(x0 + x, y0 + y, BrushColor);
+                image.SetPixel(-x0 + x, y0 + y, BrushColor);
+            }
         }
         
     }
