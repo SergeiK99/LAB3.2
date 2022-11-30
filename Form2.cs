@@ -14,6 +14,7 @@ namespace LAB3._2
     {
         public int W
         {
+
             get
             {
                 string text = tbW.Text;

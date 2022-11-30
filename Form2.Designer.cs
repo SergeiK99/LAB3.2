@@ -71,6 +71,7 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(100, 20);
             this.tbName.TabIndex = 3;
+            this.tbName.Text = "123";
             // 
             // tbW
             // 
@@ -78,6 +79,7 @@
             this.tbW.Name = "tbW";
             this.tbW.Size = new System.Drawing.Size(100, 20);
             this.tbW.TabIndex = 4;
+            this.tbW.Text = "1000";
             // 
             // tbH
             // 
@@ -85,6 +87,7 @@
             this.tbH.Name = "tbH";
             this.tbH.Size = new System.Drawing.Size(100, 20);
             this.tbH.TabIndex = 5;
+            this.tbH.Text = "1000";
             // 
             // button1
             // 
@@ -120,7 +123,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Создание Файла";
             this.ResumeLayout(false);
             this.PerformLayout();
 

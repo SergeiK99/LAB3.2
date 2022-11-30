@@ -112,7 +112,8 @@ namespace LAB3._2
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image=null;
+            Close();
+            //pictureBox1.Image=null;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -120,7 +121,21 @@ namespace LAB3._2
             if (colorDialog1.ShowDialog()==DialogResult.OK)
             {
                 button5.BackColor = colorDialog1.Color;
+                if (colorDialog1.Color == Color.Black)
+                {
+                    button5.ForeColor = Color.White;
+                }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _selecredBrush = new FillCircle(SelectedColor, SelectedSize);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            _selecredBrush = new Eraser(SelectedColor, SelectedSize);
         }
     }
 }
