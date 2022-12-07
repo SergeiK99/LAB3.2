@@ -137,5 +137,35 @@ namespace LAB3._2
         {
             _selecredBrush = new Eraser(SelectedColor, SelectedSize);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _selecredBrush = new Rectangle(SelectedColor, SelectedSize);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            _selecredBrush = new Spray(SelectedColor, SelectedSize);
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click_2(object sender, EventArgs e)
+        {
+            _selecredBrush = new SlashR(SelectedColor, SelectedSize);
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            _selecredBrush = new SlashL(SelectedColor, SelectedSize);
+        }
     }
 }

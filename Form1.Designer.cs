@@ -39,6 +39,7 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsPanel = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -49,7 +50,9 @@
             this.drawPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button6 = new System.Windows.Forms.Button();
+            this.bt7 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolsPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -136,7 +139,6 @@
             // 
             // toolsPanel
             // 
-            this.toolsPanel.Controls.Add(this.button6);
             this.toolsPanel.Controls.Add(this.button5);
             this.toolsPanel.Controls.Add(this.groupBox1);
             this.toolsPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -145,10 +147,21 @@
             this.toolsPanel.Size = new System.Drawing.Size(200, 426);
             this.toolsPanel.TabIndex = 1;
             // 
+            // button6
+            // 
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(12, 137);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(78, 29);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Ластик";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // button5
             // 
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(12, 200);
+            this.button5.Location = new System.Drawing.Point(12, 231);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(182, 41);
             this.button5.TabIndex = 2;
@@ -158,6 +171,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.bt7);
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -166,7 +183,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 182);
+            this.groupBox1.Size = new System.Drawing.Size(200, 225);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выбор кисти";
@@ -174,7 +191,7 @@
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(116, 130);
+            this.button4.Location = new System.Drawing.Point(116, 102);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(78, 29);
             this.button4.TabIndex = 3;
@@ -186,7 +203,7 @@
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(12, 130);
+            this.button3.Location = new System.Drawing.Point(116, 137);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(78, 29);
             this.button3.TabIndex = 2;
@@ -203,6 +220,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Прямоуг";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -221,12 +239,14 @@
             this.trackBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.trackBar1.LargeChange = 10;
             this.trackBar1.Location = new System.Drawing.Point(3, 16);
-            this.trackBar1.Minimum = 1;
+            this.trackBar1.Maximum = 15;
+            this.trackBar1.Minimum = 5;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(194, 45);
             this.trackBar1.SmallChange = 2;
             this.trackBar1.TabIndex = 0;
-            this.trackBar1.Value = 1;
+            this.trackBar1.Value = 5;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // drawPanel
             // 
@@ -240,6 +260,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(600, 426);
@@ -249,16 +270,40 @@
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // button6
+            // bt7
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(62, 273);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(78, 29);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Ластик";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.bt7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt7.Location = new System.Drawing.Point(12, 102);
+            this.bt7.Name = "bt7";
+            this.bt7.Size = new System.Drawing.Size(78, 29);
+            this.bt7.TabIndex = 4;
+            this.bt7.Text = "Болончик";
+            this.bt7.UseVisualStyleBackColor = true;
+            this.bt7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button7
+            // 
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Location = new System.Drawing.Point(12, 172);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(78, 29);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Косая черта \\";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_2);
+            // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button8.Location = new System.Drawing.Point(116, 172);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(78, 29);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Косая черта /";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
@@ -308,6 +353,9 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button bt7;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 
