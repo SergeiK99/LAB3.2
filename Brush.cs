@@ -122,12 +122,25 @@ namespace LAB3._2
         public override void Draw(Bitmap image, int x, int y)
         {
             Random random = new Random();
-            for (int y0 = y-Size; y0 < y+ Size; y0++)
+            /*for (int y0 = y-Size; y0 < y+ Size; y0++)
             {
                 for (int x0 = x-Size; x0 < x+ Size; x0++)
                 {
                     int randompixel = random.Next(-Size, Size);
                     image.SetPixel(randompixel+x0, randompixel+y0, BrushColor);
+                }
+            }*/
+            for (int y0 = y-Size; y0 <  y+Size; y0++)
+            {
+                for (int x0 = x-Size; x0 < x+ Size; x0++)
+                {
+                    int randompx = random.Next(-Size, Size);
+                    int randompy = random.Next(-Size, Size);
+                    if (((x-x0)*(x-x0))+((y-y0)*(y-y0))<(Size*Size))
+                    {
+                        image.SetPixel(x0+randompx , y0+randompy, BrushColor);
+                    }
+
                 }
             }
         }

@@ -55,7 +55,7 @@ namespace LAB3._2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            CreateBlank(1000,1000);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,7 +85,14 @@ namespace LAB3._2
             _y = e.Y > 0 ? e.Y : 0;
             if (_mouseClicked)
             {
-                _selecredBrush.Draw(pictureBox1.Image as Bitmap, _x, _y);
+                try
+                {
+                    _selecredBrush.Draw(pictureBox1.Image as Bitmap, _x, _y);
+                }
+                catch
+                {
+
+                }
                 pictureBox1.Refresh();
             }
         }
@@ -126,6 +133,7 @@ namespace LAB3._2
                     button5.ForeColor = Color.White;
                 }
             }
+            _selecredBrush.BrushColor = colorDialog1.Color;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -160,7 +168,7 @@ namespace LAB3._2
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-
+            _selecredBrush.Size = trackBar1.Value;
         }
 
         private void button8_Click(object sender, EventArgs e)
